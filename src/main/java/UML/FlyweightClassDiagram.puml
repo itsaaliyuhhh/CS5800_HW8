@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Document {
+    - List<Character> characters
+    - CharacterPropertiesFactory propertiesFactory
+    + addCharacter(char, String, String, int)
+    + editCharacterProperties(int, String, String, int)
+    + saveToFile(String)
+    + loadFromFile(String)
+}
+
+class Character {
+    - char character
+    - CharacterProperties characterProperty
+    + setCharacter(char)
+    + setCharacterProperty(CharacterProperties)
+    + getCharacter()
+    + getFont()
+    + getColor()
+    + getSize()
+}
+
+class CharacterProperties {
+    - String font
+    - String color
+    - int size
+    + getFont()
+    + getColor()
+    + getSize()
+}
+
+class CharacterPropertiesFactory {
+    - Map<String, CharacterProperties> flyweights
+    + setAndRetrieveFlyweightCharacterProperties(String, String, int)
+    + sizeOfMap()
+}
+
+Document --> Character : "manages"
+Character --> CharacterProperties : "uses"
+CharacterPropertiesFactory --> CharacterProperties : "creates or reuses"
+
+@enduml

@@ -1,0 +1,105 @@
+@startuml
+'https://plantuml.com/object-diagram
+object Document {
+    characters = [H, e, l, l, o, W, o, r, l, d, C, S, 5, 8, 0]
+}
+
+object CharacterPropertiesFactory {
+    flyweights = { "ArialBlack16", "VerdanaBlue18", "VerdanaRed12", "CalibriBlue99" }
+}
+
+object Character_H {
+    character = 'H'
+    characterProperty = CharacterProperties_CalibriBlue99
+}
+
+object Character_W {
+    character = 'W'
+    characterProperty = CharacterProperties_CalibriBlue99
+}
+
+object Character_e {
+    character = 'e'
+    characterProperty = CharacterProperties_ArialBlack14
+}
+
+object Character_l {
+    character = 'l'
+    characterProperty = CharacterProperties_ArialBlack14
+}
+
+object Character_C {
+    character = 'C'
+    characterProperty = CharacterProperties_VerdanaBlue18
+}
+
+object Character_S {
+    character = 'S'
+    characterProperty = CharacterProperties_VerdanaBlue18
+}
+
+object Character_5 {
+    character = '5'
+    characterProperty = CharacterProperties_VerdanaRed12
+}
+
+object Character_8 {
+    character = '8'
+    characterProperty = CharacterProperties_VerdanaRed12
+}
+
+object Character_0 {
+    character = '0'
+    characterProperty = CharacterProperties_VerdanaRed12
+}
+
+object CharacterProperties_ArialBlack16 {
+    font = "Arial"
+    color = "Black"
+    size = 16
+}
+
+object CharacterProperties_ArialBlack14 {
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object CharacterProperties_VerdanaBlue18 {
+    font = "Verdana"
+    color = "Blue"
+    size = 18
+}
+
+object CharacterProperties_VerdanaRed12 {
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object CharacterProperties_CalibriBlue99 {
+    font = "Calibri"
+    color = "Blue"
+    size = 99
+}
+
+Document --> Character_H
+Document --> Character_e
+Document --> Character_l
+Document --> Character_W
+Document --> Character_C
+Document --> Character_S
+Document --> Character_5
+Document --> Character_8
+Document --> Character_0
+
+Character_H --> CharacterProperties_CalibriBlue99
+Character_W --> CharacterProperties_CalibriBlue99
+Character_e --> CharacterProperties_ArialBlack14
+Character_l --> CharacterProperties_ArialBlack14
+Character_C --> CharacterProperties_VerdanaBlue18
+Character_S --> CharacterProperties_VerdanaBlue18
+Character_5 --> CharacterProperties_VerdanaRed12
+Character_8 --> CharacterProperties_VerdanaRed12
+Character_0 --> CharacterProperties_VerdanaRed12
+@enduml
